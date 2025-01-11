@@ -23,7 +23,7 @@ public class SaludoController {
     // Nuevo recurso, que ante una petición GET, generará un mensaje de saludo personalizado
     @GetMapping(value="saludo/{name}", produces = MediaType.TEXT_PLAIN_VALUE)
     public String saludo(@PathVariable("name") String nombre) {
-        return "Bienvenido a Spring Boot, querido: " + nombre;
+        return "Bienvenido a Spring Boot, querido " + nombre;
     }
 
     /*Recogida de datos a través de parámetros stringquery.
