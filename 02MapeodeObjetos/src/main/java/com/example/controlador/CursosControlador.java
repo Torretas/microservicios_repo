@@ -30,13 +30,13 @@ public class CursosControlador {
     }
 
     // 2º recurso o metodo del ejercicio 4. URL->cursos
-    @GetMapping(value="cursos", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value="cursos", produces= MediaType.APPLICATION_XML_VALUE)
     public List<Curso> getCursos() {
         return cursos;
     }
 
     // 1er recurso. Genera un curso. URL->curso
-    @GetMapping(value="curso", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value="curso", produces= MediaType.APPLICATION_XML_VALUE)
     public Curso getCurso() {
         return new Curso("2DAM", 1000, "mañana");
 
@@ -47,7 +47,7 @@ public class CursosControlador {
     }
 
     // 3er recurso. Buscador de cursos. Devuelve los cursos de un determinado nombre. URL cursos con variable
-    @GetMapping(value="curso/{name}", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value="cursos/{name}", produces= MediaType.APPLICATION_JSON_VALUE)
     public List<Curso> buscarCursos(@PathVariable("name") String nombre) {
         List<Curso> aux = new ArrayList<>();
         for (Curso curso : cursos) {
