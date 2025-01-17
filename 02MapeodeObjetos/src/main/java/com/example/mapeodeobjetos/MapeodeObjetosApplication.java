@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.example.controlador"})
+//@ComponentScan(basePackages = {"com.example.controlador"})
 public class MapeodeObjetosApplication {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.example.modelo;
+package com.example.mapeodeobjetos.model;
 
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
