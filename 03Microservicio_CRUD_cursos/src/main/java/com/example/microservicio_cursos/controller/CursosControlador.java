@@ -1,11 +1,9 @@
-package com.example.mapeodeobjetos.controller;
+package com.example.microservicio_cursos.controller;
 
-import com.example.mapeodeobjetos.model.Curso;
+import com.example.microservicio_cursos.model.Curso;
 import jakarta.annotation.PostConstruct;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +34,7 @@ public class CursosControlador {
     }
 
     // 1er recurso. Genera un curso. URL->curso
-    @GetMapping(value="curso", produces= MediaType.APPLICATION_XML_VALUE)
+    @GetMapping(value="curso", produces= MediaType.APPLICATION_JSON_VALUE)
     public Curso getCurso() {
         return new Curso("2DAM", 1000, "mañana");
 
@@ -56,5 +54,31 @@ public class CursosControlador {
             }
         }
         return aux;
+    }
+
+    // Operación de BORRADO - DELETE
+    @DeleteMapping(value="curso/{name}")
+    public void eliminarCurso(@PathVariable("name") String nombre) {
+        cursos.removeIf(curso -> curso.getNombre().equals(nombre));
+    }
+
+    // Operación de CREACIÓN - POST
+    @PostMapping(value="curso", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE) // consumes es el tipo de dato que recibe y produces el tipo de dato que devuelve
+    public List<Curso> crearCurso(@RequestBody Curso curso) {
+        cursos.add(curso);
+        return cursos;
+    }
+
+    // Operación de ACTUALIZACIÓN - PUT
+    @PutMapping(value="curso", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
+    public List<Curso> actualizarCurso(@RequestBody Curso curso) {
+
+        // actualiza los datos del curso que tenga el mismo nombre
+        for (int i=0; i<cursos.size(); i++) {
+            if (cursos.get(i).getNombre().equals(curso.getNombre())) {
+                cursos.set(i, curso);
+            }
+        }
+        return cursos;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.mapeodeobjetos.model;
+package com.example.microservicio_cursos.model;
 
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;

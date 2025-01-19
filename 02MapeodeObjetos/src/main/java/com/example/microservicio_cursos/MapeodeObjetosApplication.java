@@ -1,8 +1,7 @@
-package com.example.mapeodeobjetos;
+package com.example.microservicio_cursos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 //@ComponentScan(basePackages = {"com.example.controlador"})
