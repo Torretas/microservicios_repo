@@ -16,5 +16,7 @@ public interface AgendaDao {
 
     void eliminarContacto(int idContacto);
 
+    Contacto recuperarContacto(int idContacto);
+
     void actualizarContacto(Contacto contacto);
 }

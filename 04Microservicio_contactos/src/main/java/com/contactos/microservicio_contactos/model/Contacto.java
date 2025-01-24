@@ -3,12 +3,12 @@ package com.contactos.microservicio_contactos.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "contactos", schema = "contactos")
+@Table(name = "contactos", schema = "contactos_db")
 public class Contacto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idContacto", columnDefinition = "int UNSIGNED not null")
-    private Long id;
+    @Column(name = "idcontacto", columnDefinition = "int UNSIGNED not null")
+    private int idContacto;
 
     @Column(name = "nombre", nullable = false, length = 45)
     private String nombre;
@@ -17,14 +17,14 @@ public class Contacto {
     private String email;
 
     @Column(name = "edad", columnDefinition = "int UNSIGNED not null")
-    private Long edad;
+    private int edad;
 
-    public Long getId() {
-        return id;
+    public int getIdContacto() {
+        return idContacto;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdContacto(int id) {
+        this.idContacto = id;
     }
 
     public String getNombre() {
@@ -43,11 +43,11 @@ public class Contacto {
         this.email = email;
     }
 
-    public Long getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(Long edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
