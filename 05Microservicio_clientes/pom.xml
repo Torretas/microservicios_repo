@@ -8,11 +8,11 @@
 		<version>3.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.contactos</groupId>
-	<artifactId>Microservicio_contactos</artifactId>
+	<groupId>com.clientes</groupId>
+	<artifactId>Microservicio_clientes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>04Microservicio_contactos</name>
-	<description>04Microservicio_contactos</description>
+	<name>05Microservicio_clientes</name>
+	<description>05Microservicio_clientes</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -28,25 +28,13 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
-
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
