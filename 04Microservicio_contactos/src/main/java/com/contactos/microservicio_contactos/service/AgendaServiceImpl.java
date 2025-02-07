@@ -29,6 +29,14 @@ public class AgendaServiceImpl implements AgendaService {
 
     @Override
     public List<Contacto> recuperarContactos() {
+        /** Para simular un retraso en la respuesta al cliente al implementar la llamada asincrona
+         * try {
+         *    Thread.sleep(10000);
+         *    } catch (InterruptedException e) {
+         *    e.printStackTrace();
+         *    }
+         */
+
         return dao.devolverContactos();
     }
 
